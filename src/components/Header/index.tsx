@@ -35,12 +35,12 @@ const Header = () => {
 						Mag4Blog
 					</li>
 					<li>
-						<Link href="/" tabIndex={isFocusible}>
+						<Link href="/blog" tabIndex={isFocusible}>
 							Posts
 						</Link>
 					</li>
 					<li>
-						<Link href="/" tabIndex={isFocusible}>
+						<Link href="/about" tabIndex={isFocusible}>
 							About us
 						</Link>
 					</li>
