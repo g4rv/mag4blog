@@ -11,7 +11,7 @@ const CreatePost = () => {
                 encType="multipart/form-data"
             >
                 <div className="">
-                    <span className="text-lg block mb-3 font-semibold">Title</span>
+                    <p className="text-lg mb-3 font-semibold">Title</p>
                     <label className="" htmlFor="postTitle">
                         <input
                             className="w-full border py-2 px-4 rounded-lg text-base text-black m-[1px] outline-offset-4 outline-1 outline-white"
@@ -25,7 +25,7 @@ const CreatePost = () => {
                     </label>
                 </div>
                 <div className="">
-                    <span className="text-lg block mb-3 font-semibold">Photo</span>
+                    <p className="text-lg mb-3 font-semibold">Photo</p>
                     <div className="flex gap-3">
                         <label
                             className="relative block cursor-pointer px-3 py-6 w-full rounded-lg text-center bg-white text-black font-medium text-sm m-[1px] outline-offset-4 outline-1 outline-white before:content-['Select_Photo'] before:absolute before:inset-0 before:m-auto before:text-black before:h-fit hover:bg-slate-300 transition-colors"
@@ -50,7 +50,7 @@ const CreatePost = () => {
                     </div>
                 </div>
                 <label className="" htmlFor="postText">
-                    <span className="text-lg block mb-3 font-semibold">Text</span>
+                    <p className="text-lg mb-3 font-semibold">Text</p>
                     <textarea
                         className="w-full min-h-[12.5rem] border py-2 px-4 rounded-lg text-base text-black m-[1px] outline-offset-4 outline-1 outline-white"
                         id="postText"
@@ -60,7 +60,7 @@ const CreatePost = () => {
                     />
                 </label>
                 <div className="">
-                    <span className="text-lg block mb-3 font-semibold">Tags</span>
+                    <p className="text-lg mb-3 font-semibold">Tags</p>
                     <label className="flex gap-3" htmlFor="postText">
                         <input
                             className="w-full border py-2 px-4 rounded-lg text-base text-black m-[1px] outline-offset-4 outline-1 outline-white"
