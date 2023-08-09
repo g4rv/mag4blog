@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { useSession, signOut } from 'next-auth/react';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
 	const openFunc = () => setIsOpen(true);
 
 	const isFocusible = isOpen ? 0 : -1;
-
+	const session = useSession();
 	return (
 		<header className="sticky top-0 py-5 px-4 z-50">
 			<div className="flex items-center justify-between sm:hidden">
@@ -50,9 +51,13 @@ const Header = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/" tabIndex={isFocusible}>
-							Login/Register
-						</Link>
+						{session.status === 'authenticated' ? (
+							<button onClick={() => signOut()}>Log out</button>
+						) : (
+							<Link href="/dashboard" tabIndex={isFocusible}>
+								Login/Register
+							</Link>
+						)}
 					</li>
 				</ul>
 				<button
