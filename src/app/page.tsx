@@ -1,10 +1,9 @@
-import Link from "next/link";
+import Blog from "./blog/page";
 
 export default function Home() {
   return (
     <main className="">
-        <Link href='/about'>About</Link>
-        <Link href='/blog'>Blog</Link>
+       <Blog/>
     </main>
   )
 }

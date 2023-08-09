@@ -5,11 +5,9 @@ type TitleProps = {
 };
 const Title = ({ titleText }: TitleProps) => {
     return (
-        <div>
-            <h1 className="border-y-2 text-[14rem] font-bold leading-tight uppercase text-center">
-                {titleText}
-            </h1>
-        </div>
+        <h1 className="border-y-2 text-[14rem] font-bold leading-tight uppercase text-center">
+            {titleText}
+        </h1>
     );
 };
 
