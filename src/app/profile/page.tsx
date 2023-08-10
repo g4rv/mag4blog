@@ -20,12 +20,12 @@ const Profile = () => {
                 <div className="">
                     <h2>Recent post</h2>
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
                     </ul>
                     <button></button>
                 </div>
