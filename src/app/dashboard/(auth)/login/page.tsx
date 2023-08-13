@@ -32,7 +32,7 @@ const LoginPage = () => {
                     />
                 </label>
                 <br />
-                Dont have a profile yet?{' '}
+                Dont have a profile yet?
                 <Link
                     className="p-3 rounded-lg text-center bg-white text-black font-medium text-sm min-w-fit m-[1px] outline-offset-4 outline-1 outline-white hover:bg-slate-300 transition-colors"
                     href="/dashboard/register"

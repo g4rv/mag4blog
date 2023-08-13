@@ -16,7 +16,7 @@ const CreatePost = () => {
                         Title <span className="text-pink-600 ">*</span>
                     </p>
                     <label
-                        className="relative group-focus:before:block group-focus:before:absolute group-focus:before:-left-5 group-focus:before:top-[50%] group-focus:before:w-2 group-focus:before:h-2 group-focus:before:bg-white group-focus:before:rounded-full"
+                        className="relative focus-within:before:block focus-within:before:absolute focus-within:before:-left-5 focus-within:before:top-[50%] focus-within:before:w-2 focus-within:before:h-2 focus-within:before:bg-white focus-within:before:rounded-full"
                         htmlFor="postTitle"
                     >
                         <input
@@ -29,7 +29,7 @@ const CreatePost = () => {
                             minLength={3}
                             required
                         />
-                        <p className="hidden peer-invalid:block mt-1 text-pink-600 font-medium text-sm">
+                        <p className="hidden peer-invalid:block peer-focus:hidden mt-1 text-pink-600 font-medium text-sm">
                             Provide at least 3 letters
                         </p>
                     </label>
