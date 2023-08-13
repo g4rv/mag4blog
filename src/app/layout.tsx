@@ -18,8 +18,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={inter.className}>
+		<html lang="en" className="light">
+			<body className={`grid grid-rows-[min-content_1fr_min-content] ${inter.className}`}>
 				<AuthProvider>
 					<Header />
 					{children}
