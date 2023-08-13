@@ -54,9 +54,14 @@ const Header = () => {
 						{session.status === 'authenticated' ? (
 							<button onClick={() => signOut()}>Log out</button>
 						) : (
-							<Link href="/dashboard" tabIndex={isFocusible}>
-								Login/Register
-							</Link>
+							<div className='flex gap-4'>
+								<Link href="/dashboard/login" tabIndex={isFocusible}>
+									Login
+								</Link>
+                                <Link href="/dashboard/register" tabIndex={isFocusible}>
+									Register
+								</Link>
+							</div>
 						)}
 					</li>
 				</ul>

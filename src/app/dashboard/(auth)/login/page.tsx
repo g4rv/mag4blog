@@ -1,4 +1,5 @@
 'use client';
+import Input from '@/ui/Input';
 import { useSession, signIn } from 'next-auth/react';
 import Link from 'next/link';
 
@@ -23,6 +24,7 @@ const LoginPage = () => {
                         className="w-full max-w-[16.25rem] border py-2 px-4 rounded-lg text-base text-black m-[1px] outline-offset-4 outline-1 outline-white"
                         type="email"
                     />
+                    <Input/>
                 </label>
                 <label className="flex flex-col gap-2">
                     <p>Password</p>
@@ -46,6 +48,7 @@ const LoginPage = () => {
                 >
                     Log in
                 </button>
+                <button onClick={() => signIn('google')}>Google</button>
             </form>
         </main>
     );

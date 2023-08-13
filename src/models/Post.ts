@@ -12,6 +12,13 @@ const postSchema = new Schema({
 		required: true,
 	},
 	imgURL: String,
+    tags: {
+        type: [String]
+    },
+    username: {
+        type: String,
+        required: true
+    }
 });
 
 export default mongoose.models.Post || mongoose.model('Post', postSchema);
