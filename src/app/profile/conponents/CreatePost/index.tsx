@@ -1,4 +1,9 @@
+import Button from '@/ui/Button';
+import Input from '@/ui/Input';
 import React from 'react';
+
+const labelStyles =
+    'relative focus-within:before:block focus-within:before:absolute focus-within:before:-left-5 focus-within:before:top-[35%] focus-within:before:w-2 focus-within:before:h-2 focus-within:before:bg-white focus-within:before:rounded-full';
 
 const CreatePost = () => {
     return (
@@ -15,13 +20,8 @@ const CreatePost = () => {
                     <p className="text-lg mb-3 font-semibold">
                         Title <span className="text-pink-600 ">*</span>
                     </p>
-                    <label
-                        className="relative focus-within:before:block focus-within:before:absolute focus-within:before:-left-5 focus-within:before:top-[50%] focus-within:before:w-2 focus-within:before:h-2 focus-within:before:bg-white focus-within:before:rounded-full"
-                        htmlFor="postTitle"
-                    >
-                        <input
-                            className="w-full border-2 py-2 px-4 rounded-lg text-base text-black outline-none peer"
-                            type="text"
+                    <label className={labelStyles} htmlFor="postTitle">
+                        <Input
                             id="postTitle"
                             name="postTitle"
                             placeholder="Enter post title"
@@ -39,11 +39,11 @@ const CreatePost = () => {
                         Photo <span className="text-pink-600">*</span>
                     </p>
                     <div className="flex gap-3">
-                        <label
+                        {/* <label
                             className="relative block cursor-pointer px-3 py-6 w-full rounded-lg text-center bg-white text-black font-medium text-sm outline-transparent active:border-blue-800 before:content-['Select_Photo'] before:absolute before:inset-0 before:m-auto before:text-black before:h-fit hover:bg-slate-300 transition-colors "
                             htmlFor="postImg"
                         >
-                            <input
+                            <Input
                                 className="hidden file:bg-transparent file:border-none file:cursor-pointer valid:border-red-500 peer"
                                 type="file"
                                 id="postImg"
@@ -52,23 +52,26 @@ const CreatePost = () => {
                                 accept="image/*"
                                 required
                             />
+                        </label> */}
+                        <label htmlFor={labelStyles}>
+                            <Input id="postImg" name="postImg" placeholder='Paste image url'required />
                         </label>
-                        {/* <p className="invisible peer-invalid:visible text-pink-600 font-medium text-sm">
-                                Provide a photo
-                            </p> */}
+                        <p className="hidden peer-invalid:block mt-1 text-pink-600 font-medium text-sm">
+                            Provide at least 10 letters
+                        </p>
                     </div>
                 </div>
-                <label className="" htmlFor="postText">
+                <label className={labelStyles} htmlFor="postText">
                     <p className="text-lg mb-3 font-semibold">
                         Text <span className="text-pink-600">*</span>
                     </p>
                     <textarea
-                        className="w-full min-h-[12.5rem] border py-2 px-4 rounded-lg text-base text-black outline-transparent active:border-blue-800 valid:border-red-500 peer"
+                        className="w-full min-h-[12.5rem] outline-none border py-2 px-4 rounded-lg text-base text-black outline-transparent active:border-blue-800 valid:border-red-500 peer"
                         id="postText"
                         name="postText"
                         placeholder="Enter your text"
-                        required
                         minLength={10}
+                        required
                     />
                     <p className="hidden peer-invalid:block mt-1 text-pink-600 font-medium text-sm">
                         Provide at least 10 letters
@@ -78,34 +81,24 @@ const CreatePost = () => {
                     <p className="text-lg mb-3 font-semibold">
                         Tags <span className="text-pink-600">*</span>
                     </p>
-                    <label className="flex gap-3" htmlFor="postText">
-                        <input
-                            className="w-full border py-2 px-4 rounded-lg text-base text-black outline-transparent active:border-blue-800 valid:border-red-500 peer"
-                            type="text"
-                            id="postText"
-                            name="postText"
-                            placeholder="Eneter your tags"
-                            maxLength={45}
-                            minLength={3}
-                            required
-                        />
-                        <button
-                            className="p-3 rounded-lg text-center bg-white text-black font-medium text-sm min-w-fit outline-transparent active:border-blue-800 hover:bg-slate-300 transition-colors"
-                            type="submit"
-                        >
-                            Add tag
-                        </button>
-                        <p className="invisible peer-invalid:visible mt-1 text-pink-600 font-medium text-sm">
-                            Provide at least 3 letters
-                        </p>
-                    </label>
+                    <div className="">
+                        <label className={labelStyles} htmlFor="postTag">
+                            <Input
+                                id="postTag"
+                                name="postTag"
+                                placeholder="Eneter your tags"
+                                maxLength={45}
+                                minLength={3}
+                                required
+                            />
+                            <p className="invisible peer-invalid:visible mt-1 text-pink-600 font-medium text-sm">
+                                Provide at least 3 letters
+                            </p>
+                        </label>
+                        <Button type="submit" innerText="Add tag" />
+                    </div>
                 </div>
-                <button
-                    className="p-3 rounded-lg text-center bg-white text-black font-medium text-sm outline-transparent active:border-blue-800 hover:bg-slate-300 transition-colors"
-                    type="submit"
-                >
-                    Publish my post
-                </button>
+                <Button type="submit" innerText="Publish my post" />
             </form>
         </section>
     );
