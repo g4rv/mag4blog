@@ -8,16 +8,16 @@ export const POST = async (request) => {
     const {name, username, email, password} = await request.json()
 
     await connect()
-    
+
     const hashedPassword = await bcrypt.hash(password, 5)
-    
+
     const newUser = new User({
         name,
-        username, 
+        username,
         email,
         password: hashedPassword
     })
-    
+
     try {
         await newUser.save()
         return new NextResponse('User has been created', {
