@@ -8,7 +8,7 @@ const Input: React.FC<InputProps> = ({ type = 'text', className, ...inputProps }
         <input
             type={type}
             className={twMerge(
-                'border border-[rgb(var(--background-rgb))] outline-none w-full py-2 px-4 rounded-lg text-base text-[rgb(var(--foreground-rgb))] bg-[rgb(var(--foreground-rgb))] valid:border-red-500 peer',
+                'border border-[rgb(var(--background-rgb))] outline-none w-full py-2 px-4 rounded-lg text-base text-[rgb(var(--foreground-rgb))] bg-white/75 valid:border-red-500 peer',
                 className,
             )}
             {...inputProps}

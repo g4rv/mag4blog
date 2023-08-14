@@ -1,5 +1,5 @@
 import React from 'react';
-import CreatePost from './conponents/CreatePost';
+import CreatePost from './components/CreatePost';
 import Title from '@/ui/Title';
 import Image from 'next/image';
 import { Metadata } from 'next';
