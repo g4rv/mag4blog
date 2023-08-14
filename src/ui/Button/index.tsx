@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
         <button
             type={type}
             className={twMerge(
-                'p-3 rounded-lg text-center bg-white text-black font-medium text-sm min-w-fit outline-transparent active:border-blue-800 hover:bg-slate-300 transition-colors',
+                'p-3 rounded-lg text-center text-[rgb(var(--background-rgb))] bg-[rgb(var(--foreground-rgb))] font-medium text-sm min-w-fit outline-transparent hover:bg-slate-300 transition-colors',
                 className,
             )}
             {...buttonProps}

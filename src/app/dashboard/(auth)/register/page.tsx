@@ -31,14 +31,27 @@ const RegisterPage = () => {
             >
                 <label htmlFor="userName" className="flex flex-col gap-2">
                     <p>Name</p>
-                    <Input id="userName" name="userName" placeholder="Petro" required/>
+                    <Input
+                        id="userName"
+                        name="userName"
+                        placeholder="Pedro"
+                        maxLength={45}
+                        required
+                    />
                     {/* <p className="hidden peer-invalid:block text-pink-600 font-medium text-sm">
                         Provide at least 2 characters
                     </p> */}
                 </label>
                 <label htmlFor="userNickname" className="flex flex-col gap-2">
                     <p>Nickname*</p>
-                    <Input name="userNickname" id="userNickname" placeholder="Leonardo" required />
+                    <Input
+                        name="userNickname"
+                        id="userNickname"
+                        placeholder="Leonardo"
+                        minLength={2}
+                        maxLength={45}
+                        required
+                    />
                     <p className="hidden peer-invalid:block text-pink-600 font-medium text-sm">
                         Provide at least 2 characters
                     </p>
@@ -63,6 +76,7 @@ const RegisterPage = () => {
                         name="passowrd"
                         id="password"
                         placeholder="Enter password"
+                        minLength={8}
                         required
                     />
                     <p className="hidden peer-invalid:block text-pink-600 font-medium text-sm">
