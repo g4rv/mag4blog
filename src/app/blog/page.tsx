@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 const Blog = () => {
     return (
         <main className="container mx-auto">
-            {/* <Title titleText="The Blog" /> */}
+            <Title titleText="The Blog" />
             <RecentPosts />
-            {/* <AllPosts /> */}
+            <AllPosts />
         </main>
     );
 };

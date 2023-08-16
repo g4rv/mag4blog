@@ -16,7 +16,7 @@ const Header = () => {
 	return (
 		<header className="sticky top-0 py-5 px-4 z-50">
 			<div className="flex items-center justify-between sm:hidden">
-				<p>Mag4Blog</p>
+				<Link href='/'>Mag4Blog</Link>
 				<button className="w-6 h-6 relative" onClick={openFunc}>
 					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto top-3"></div>
 					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto"></div>
@@ -34,7 +34,7 @@ const Header = () => {
 						className="mb-4 sm:mb-0 sm:mr-auto"
 						tabIndex={isFocusible}
 					>
-						Mag4Blog
+						<Link href='/'>Mag4Blog</Link>
 					</li>
 					<li>
 						<Link href="/blog" tabIndex={isFocusible}>

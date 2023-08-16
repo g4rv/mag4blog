@@ -1,108 +1,180 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const AllPosts = () => {
-    return (
-        <section>
-            <h2 className="text-2xl mb-8">All blog posts</h2>
-            <div className="flex gap-8 2xl:flex-wrapp">
-                <article className="flex flex-col">
-                    <div className="relative overflow-hidden">
-                        <Image
-                            src="/images/about.jpg"
-                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover "
-                            width={700}
-                            height={700}
-                            alt="UX review presentations"
-                        />
-                    </div>
-                    <div className="flex-1">
-                        <time dateTime="" className="block text-sm text-[#6941C6] mb-3">
-                            Sunday , 1 Jan 2023
-                        </time>
-                        <h2 className="text-2xl font-semibold border-b border-transparent w-fit mb-3 hover:border-white transition-colors">
-                            <Link href="/">UX review presentations</Link>
-                        </h2>
-                        <p className="mb-6 text-[#C0C5D0]">
-                            How do you create compelling presentations that wow your colleagues and
-                            impress your managers?
-                        </p>
-                        <div className="flex gap-2">
-                            <span className="bg-white font-medium py-1 px-2.5 rounded-full text-sm text-[#6941C6]">
-                                Design
-                            </span>
-                            <span className="bg-white font-medium py-1 px-2.5 rounded-full text-sm text-[#3538CD]">
-                                Research
-                            </span>
-                        </div>
-                    </div>
-                </article>
-                <article className="flex flex-col">
-                    <div className="relative overflow-hidden">
-                        <Image
-                            src="/images/about.jpg"
-                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover "
-                            width={385}
-                            height={200}
-                            alt="UX review presentations"
-                        />
-                    </div>
-                    <div className="flex-1">
-                        <time dateTime="" className="block text-sm text-[#6941C6] mb-3">
-                            Sunday , 1 Jan 2023
-                        </time>
-                        <h2 className="text-2xl font-semibold border-b border-transparent w-fit mb-3 hover:border-white transition-colors">
-                            <Link href="/">UX review presentations</Link>
-                        </h2>
-                        <p className="mb-6 text-[#C0C5D0]">
-                            How do you create compelling presentations that wow your colleagues and
-                            impress your managers?
-                        </p>
-                        <div className="flex gap-2">
-                            <span className="bg-white font-medium py-1 px-2.5 rounded-full text-sm text-[#6941C6]">
-                                Design
-                            </span>
-                            <span className="bg-white font-medium py-1 px-2.5 rounded-full text-sm text-[#3538CD]">
-                                Research
-                            </span>
-                        </div>
-                    </div>
-                </article>
-                <article className="flex flex-col">
-                    <div className="relative overflow-hidden">
-                        <Image
-                            src="/images/about.jpg"
-                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover "
-                            width={385}
-                            height={200}
-                            alt="UX review presentations"
-                        />
-                    </div>
-                    <div className="flex-1">
-                        <time dateTime="" className="block text-sm text-[#6941C6] mb-3">
-                            Sunday , 1 Jan 2023
-                        </time>
-                        <h2 className="text-2xl font-semibold border-b border-transparent w-fit mb-3 hover:border-white transition-colors">
-                            <Link href="/">UX review presentations</Link>
-                        </h2>
-                        <p className="mb-6 text-[#C0C5D0]">
-                            How do you create compelling presentations that wow your colleagues and
-                            impress your managers?
-                        </p>
-                        <div className="flex gap-2">
-                            <span className="bg-white font-medium py-1 px-2.5 rounded-full text-sm text-[#6941C6]">
-                                Design
-                            </span>
-                            <span className="bg-white font-medium py-1 px-2.5 rounded-full text-sm text-[#3538CD]">
-                                Research
-                            </span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-    );
+	return (
+		<section>
+			<h2 className="mb-8 text-2xl">All blog posts</h2>
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<article className="flex flex-col lg:gap-8 gap-5">
+					<Image
+						src="/images/about.jpg"
+						className="max-h-64  object-cover"
+						width={1621}
+						height={2432}
+						alt="How do you create compelling"
+					/>
+					<div className="">
+						<time
+							dateTime=""
+							className="text-purple mb-3 block text-sm"
+						>
+							Sunday , 1 Jan 2023
+						</time>
+						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-white">
+							<Link
+								className="flex items-start justify-between"
+								href="/blog/1"
+							>
+								<span>How do you create compelling</span>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M1 11L11 1M11 1H1M11 1V11"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</Link>
+						</h2>
+						<p className="mb-6 line-clamp-3 dark:text-[#C0C5D0] ">
+							How do you create compelling presentations that wow
+							your colleagues and impress your managers?
+						</p>
+						<div className="flex gap-2">
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								111
+							</span>
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								222
+							</span>
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								333
+							</span>
+						</div>
+					</div>
+				</article>
+                <article className="flex flex-col gap-8">
+					<Image
+						src="/images/about.jpg"
+						className="max-h-64  object-cover"
+						width={1621}
+						height={2432}
+						alt="How do you create compelling"
+					/>
+					<div className="">
+						<time
+							dateTime=""
+							className="text-purple mb-3 block text-sm"
+						>
+							Sunday , 1 Jan 2023
+						</time>
+						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-white">
+							<Link
+								className="flex items-center justify-between "
+								href="/blog/1"
+							>
+								<span>How do you create compelling</span>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M1 11L11 1M11 1H1M11 1V11"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</Link>
+						</h2>
+						<p className="mb-6 line-clamp-3 dark:text-[#C0C5D0] ">
+							How do you create compelling presentations that wow
+							your colleagues and impress your managers?
+						</p>
+						<div className="flex gap-2">
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								111
+							</span>
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								222
+							</span>
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								333
+							</span>
+						</div>
+					</div>
+				</article>
+                <article className="flex flex-col gap-8">
+					<Image
+						src="/images/about.jpg"
+						className="max-h-64  object-cover"
+						width={1621}
+						height={2432}
+						alt="How do you create compelling"
+					/>
+					<div className="">
+						<time
+							dateTime=""
+							className="text-purple mb-3 block text-sm"
+						>
+							Sunday , 1 Jan 2023
+						</time>
+						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-white">
+							<Link
+								className="flex items-center justify-between "
+								href="/blog/1"
+							>
+								<span>How do you create compelling</span>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										d="M1 11L11 1M11 1H1M11 1V11"
+										stroke="white"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							</Link>
+						</h2>
+						<p className="mb-6 line-clamp-3 dark:text-[#C0C5D0] ">
+							How do you create compelling presentations that wow
+							your colleagues and impress your managers?
+						</p>
+						<div className="flex gap-2">
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								111
+							</span>
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								222
+							</span>
+							<span className="before:bg-purple/10 relative overflow-hidden rounded-full bg-primary px-2.5 py-1 text-sm font-medium text-white before:absolute before:inset-0 dark:bg-white dark:text-primary ">
+								333
+							</span>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+	);
 };
 
 export default AllPosts;

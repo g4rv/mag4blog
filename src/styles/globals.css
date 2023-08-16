@@ -11,7 +11,7 @@ body:has(.light) {
 }
 
 main > section {
-	padding: 3.75rem 0;
+	padding-block: clamp(2rem, 5dvw, 3.75rem);
 }
 
 @layer base {
