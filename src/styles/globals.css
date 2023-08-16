@@ -13,6 +13,11 @@
         --background-rgb: 9, 13, 31;
     }
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
     color: rgb(var(--foreground-rgb));

@@ -38,9 +38,6 @@ const RegisterPage = () => {
                         maxLength={45}
                         required
                     />
-                    {/* <p className="hidden peer-invalid:block text-pink-600 font-medium text-sm">
-                        Provide at least 2 characters
-                    </p> */}
                 </label>
                 <label htmlFor="userNickname" className="flex flex-col gap-2">
                     <p>Nickname*</p>

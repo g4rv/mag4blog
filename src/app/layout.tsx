@@ -21,7 +21,7 @@ export default function RootLayout({
 		<html lang="en" className="light">
 			<body className={`grid grid-rows-[min-content_1fr_min-content] ${inter.className}`}>
 				<AuthProvider>
-					<Header />
+					{/* <Header /> */}
 					{children}
 					<Footer />
 				</AuthProvider>

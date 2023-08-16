@@ -6,12 +6,12 @@ const AllPosts = () => {
     return (
         <section>
             <h2 className="text-2xl mb-8">All blog posts</h2>
-            <div className="flex gap-8">
-                <article className="flex flex-col ">
-                    <div className="relative group overflow-hidden">
+            <div className="flex gap-8 2xl:flex-wrapp">
+                <article className="flex flex-col">
+                    <div className="relative overflow-hidden">
                         <Image
                             src="/images/about.jpg"
-                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover group-hover:scale-110 transition-transform"
+                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover "
                             width={700}
                             height={700}
                             alt="UX review presentations"
@@ -39,10 +39,10 @@ const AllPosts = () => {
                     </div>
                 </article>
                 <article className="flex flex-col">
-                    <div className="relative group overflow-hidden">
+                    <div className="relative overflow-hidden">
                         <Image
                             src="/images/about.jpg"
-                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover group-hover:scale-110 transition-transform"
+                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover "
                             width={385}
                             height={200}
                             alt="UX review presentations"
@@ -70,10 +70,10 @@ const AllPosts = () => {
                     </div>
                 </article>
                 <article className="flex flex-col">
-                    <div className="relative group overflow-hidden">
+                    <div className="relative overflow-hidden">
                         <Image
                             src="/images/about.jpg"
-                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover group-hover:scale-110 transition-transform"
+                            className="mb-8 max-w-[24.0625rem] max-h-[15rem] object-cover "
                             width={385}
                             height={200}
                             alt="UX review presentations"
