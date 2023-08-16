@@ -2,18 +2,28 @@ import { NextResponse } from "next/server";
 import connect from "@/utils/db";
 import Post from "@/models/Post";
 import { FilterQuery } from "mongoose";
-import { use } from "react";
 
 type Post = {
-    title: string;
-    text: string;
-    imgURL?: string;
+    title: string,
+	text: string,
+	imgURL?: string,
+    tags: {
+        type: [String]
+    },
+    author: {
+        name?: string,
+        username: string,
+        userId: string
+    }
 }
 
 export const POST = async (req: Request) => {
     const body = await req.json()
-
-    const newPost = new Post(body)    
+    console.log(body);
+    
+    const newPost = new Post(body)   
+    console.log(newPost);
+     
 
 	try {
 		await connect();
