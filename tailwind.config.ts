@@ -16,6 +16,28 @@ const config: Config = {
                 secondary: '#d6dbdc',
             },
         },
+        container: {
+            center: true,
+            padding: '2rem',
+            screens: {
+                xxs: '375px',
+                xs: '480px',
+                sm: '575px',
+                md: '768px',
+                lg: '991px',
+                xl: '1199',
+                '2xl': '1399px',
+            },
+        },
+        screens: {
+            xxs: '375px',
+            xs: '480px',
+            sm: '575px',
+            md: '768px',
+            lg: '991px',
+            xl: '1199',
+            '2xl': '1399px',
+        },
     },
     plugins: [],
     darkMode: 'class'
