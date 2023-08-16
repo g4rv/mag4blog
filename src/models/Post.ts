@@ -15,9 +15,16 @@ const postSchema = new Schema({
     tags: {
         type: [String]
     },
-    username: {
-        type: String,
-        required: true
+    author: {
+        name: String,
+        username: {
+            type: String,
+            required: true
+        },
+        id: {
+            type: String,
+            required: true
+        }
     }
 });
 

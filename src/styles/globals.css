@@ -2,31 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-rgb: 214, 219, 220;
+body:has(.dark) {
+	@apply bg-primary text-white;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-rgb: 9, 13, 31;
-    }
-}
-
-body {
-    color: rgb(var(--foreground-rgb));
-    background: rgb(var(--background-rgb));
+body:has(.light) {
+	@apply bg-white text-primary;
 }
 
 main > section {
-    padding: 3.75rem 0;
+	padding: 3.75rem 0;
 }
 
 @layer base {
-    html,
-    body {
-        height: 100%;
-        min-height: 100vh;
-    }
+	html,
+	body {
+		height: 100%;
+		min-height: 100vh;
+	}
 }
