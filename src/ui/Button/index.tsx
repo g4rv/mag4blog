@@ -1,26 +1,28 @@
-import React from 'react';
-import { twMerge } from 'tailwind-merge';
+import React, { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
-type ButtonProps = { innerText: string } & React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonProps = {
+	children: ReactNode;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = ({
-    type = 'button',
-    className,
-    innerText = '',
-    ...buttonProps
+	type = "button",
+	className,
+	children,
+	...buttonProps
 }) => {
-    return (
-        <button
-            type={type}
-            className={twMerge(
-                'p-3 rounded-lg text-center text-[rgb(var(--background-rgb))] bg-[rgb(var(--foreground-rgb))] font-medium text-sm min-w-fit outline-transparent hover:bg-slate-300 transition-colors',
-                className,
-            )}
-            {...buttonProps}
-        >
-            {innerText}
-        </button>
-    );
+	return (
+		<button
+			type={type}
+			className={twMerge(
+				"min-w-fit rounded-lg bg-white p-3 text-center text-sm font-medium text-black outline-transparent transition-colors hover:bg-slate-300 active:border-blue-800",
+				className,
+			)}
+			{...buttonProps}
+		>
+			{children}
+		</button>
+	);
 };
 
 export default Button;

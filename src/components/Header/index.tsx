@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useSession, signOut } from 'next-auth/react';
+import ThemeToggle from '../ThemeToggle';
 
 const Header = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +18,14 @@ const Header = () => {
 			<div className="flex items-center justify-between sm:hidden">
 				<p>Mag4Blog</p>
 				<button className="w-6 h-6 relative" onClick={openFunc}>
-					<div className="w-[80%] h-0.5 bg-[rgb(var(--foreground-rgb))] absolute inset-0 m-auto top-3"></div>
-					<div className="w-[80%] h-0.5 bg-[rgb(var(--foreground-rgb))] absolute inset-0 m-auto"></div>
-					<div className="w-[80%] h-0.5 bg-[rgb(var(--foreground-rgb))] absolute inset-0 m-auto bottom-3"></div>
+					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto top-3"></div>
+					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto"></div>
+					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto bottom-3"></div>
 				</button>
 			</div>
 			<nav
 				className={twMerge(
-					'fixed bg-[rgb(var(--background-rgb))] inset-0 flex flex-col justify-center items-center py-4 -translate-y-[100vh] duration-300 sm:static sm:translate-y-0 sm:block',
+					'fixed bg-white dark:bg-primary inset-0 flex flex-col justify-center items-center py-4 -translate-y-[100vh] sm:static sm:translate-y-0 sm:block',
 					isOpen && 'translate-y-0'
 				)}
 			>
@@ -46,9 +47,7 @@ const Header = () => {
 						</Link>
 					</li>
 					<li>
-						<Link href="/" tabIndex={isFocusible}>
-							Theme switch
-						</Link>
+						<ThemeToggle/>
 					</li>
 					<li>
 						{session.status === 'authenticated' ? (
@@ -70,8 +69,8 @@ const Header = () => {
 					onClick={closeFunc}
 					tabIndex={isFocusible}
 				>
-					<div className="w-[80%] h-0.5 bg-[rgb(var(--foreground-rgb))] absolute inset-0 m-auto rotate-45"></div>
-					<div className="w-[80%] h-0.5 bg-[rgb(var(--foreground-rgb))] absolute inset-0 m-auto -rotate-45"></div>
+					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto rotate-45"></div>
+					<div className="w-[80%] h-0.5 bg-primary dark:bg-white absolute inset-0 m-auto -rotate-45"></div>
 				</button>
 			</nav>
 		</header>

@@ -1,14 +1,16 @@
-'use client';
-import Button from '@/ui/Button';
-import Input from '@/ui/Input';
-import Link from 'next/link';
-import { FormEvent } from 'react';
+"use client";
+import Button from "@/ui/Button";
+import Input from "@/ui/Input";
+import Link from "next/link";
+import { FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
 const RegisterPage = () => {
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+	const route = useRouter();
 
-        const formData = new FormData(e.currentTarget);
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
 
         try {
             const res = await fetch('/api/auth/register', {
