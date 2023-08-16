@@ -22,7 +22,9 @@ const About = () => {
                 />
                 <div className="mb-8">
                     <h2 className="mb-3 text-2xl font-semibold">About Us</h2>
-                    <p className="">123</p>
+                    <p className="">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi vel dolore voluptatum officiis neque rem consequuntur aspernatur minima non omnis voluptatibus nam quasi, et eveniet saepe distinctio suscipit. Ipsum ipsa deserunt nisi vel accusamus expedita sint adipisci eos explicabo ducimus, animi vitae nulla, doloremque impedit laboriosam ea obcaecati laudantium. Obcaecati delectus commodi excepturi, odit voluptates nesciunt qui libero voluptate quo numquam mollitia odio officia eos voluptas est tenetur enim, exercitationem perspiciatis optio natus placeat doloribus? Eos magni eligendi natus placeat quasi, odit, illo odio atque praesentium id, saepe consequuntur nihil dolore aliquid iste. Est ipsa soluta eaque in voluptatibus eligendi ut ex maxime autem nemo tempore sequi corporis quam laboriosam excepturi totam, enim id itaque atque? Vel provident, quos vero perspiciatis, eos facilis placeat alias quas autem reprehenderit sequi dolores voluptatem, aut accusamus. Tenetur quo nisi, debitis, molestiae ducimus doloribus itaque distinctio asperiores ipsa autem perspiciatis deleniti nobis fugiat velit atque eum mollitia officiis, commodi sunt recusandae vel cupiditate. Ducimus in nostrum beatae, numquam velit fugiat esse? Dolore obcaecati autem sed similique tempore possimus voluptatum in nihil ducimus quidem nisi, perspiciatis eum sapiente velit nostrum praesentium esse? Possimus porro doloremque vitae nobis perspiciatis autem deleniti, molestiae aliquam et blanditiis consectetur?
+                    </p>
                 </div>
                 <div className="mb-8">
                     <h2 className="mb-3 text-2xl font-semibold">Skills:</h2>
@@ -56,17 +58,17 @@ const About = () => {
                 <div className="mb-8">
                     <h2 className="mb-3 text-2xl font-semibold">Experience:</h2>
                     <ul className="list-disc pl-7">
-                        <li className="">1</li>
-                        <li className="">2</li>
-                        <li className="">1</li>
-                        <li className="">2</li>
+                        <li className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, dolorum.</li>
+                        <li className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, dolorum.</li>
+                        <li className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, dolorum.</li>
+                        <li className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, dolorum.</li>
                     </ul>
                 </div>
                 <div className="mb-8">
-                    <h2 className="mb-3 text-base font-semibold">Education:</h2>
+                    <h2 className="mb-3 text-2xl font-semibold">Education:</h2>
                     <ul className="list-disc pl-7">
-                        <li className="">1</li>
-                        <li className="">2</li>
+                        <li className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, dolorum.</li>
+                        <li className="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat, dolorum.</li>
                     </ul>
                 </div>
             </section>
