@@ -14,8 +14,8 @@ const Header = () => {
 	const isFocusible = isOpen ? 0 : -1;
 	const session = useSession();
 	return (
-		<header className="sticky top-0 z-50">
-			<div className="container px-4 py-5">
+		<header className="sticky w-full top-0 z-50">
+			<div className="container bg-white py-5 dark:bg-primary">
 				<div className="flex items-center justify-between sm:hidden">
 					<Link href="/">Mag4Blog</Link>
 					<button className="relative h-6 w-6" onClick={openFunc}>
@@ -26,24 +26,35 @@ const Header = () => {
 				</div>
 				<nav
 					className={twMerge(
-						"fixed inset-0 flex -translate-y-[100vh] flex-col items-center justify-center bg-white py-4 dark:bg-primary sm:static sm:block sm:translate-y-0",
+						"fixed inset-0 flex -translate-y-[100vh] flex-col items-center justify-center bg-white py-4 duration-200 dark:bg-primary sm:bg-transparent sm:static sm:block sm:translate-y-0",
 						isOpen && "translate-y-0",
 					)}
 				>
-					<ul className="container mx-auto my-auto flex flex-col items-center gap-4 sm:flex-row">
-						<li
-							className="mb-4 sm:mb-0 sm:mr-auto"
-							tabIndex={isFocusible}
-						>
-							<Link href="/">Mag4Blog</Link>
+					<ul className="mx-auto my-auto flex flex-col items-center gap-4 sm:flex-row">
+						<li className="mb-4 sm:mb-0 sm:mr-auto">
+							<Link
+								href="/"
+								tabIndex={isFocusible}
+								onClick={closeFunc}
+							>
+								Mag4Blog
+							</Link>
 						</li>
 						<li>
-							<Link href="/blog" tabIndex={isFocusible}>
+							<Link
+								href="/blog"
+								tabIndex={isFocusible}
+								onClick={closeFunc}
+							>
 								Posts
 							</Link>
 						</li>
 						<li>
-							<Link href="/about" tabIndex={isFocusible}>
+							<Link
+								href="/about"
+								tabIndex={isFocusible}
+								onClick={closeFunc}
+							>
 								About us
 							</Link>
 						</li>
@@ -60,12 +71,14 @@ const Header = () => {
 									<Link
 										href="/dashboard/login"
 										tabIndex={isFocusible}
+										onClick={closeFunc}
 									>
 										Login
 									</Link>
 									<Link
 										href="/dashboard/register"
 										tabIndex={isFocusible}
+										onClick={closeFunc}
 									>
 										Register
 									</Link>
