@@ -20,7 +20,6 @@ const CreatePost = () => {
         setTitle(e.target.value);
     };
     const handleChangeImg = (e: ChangeEvent<HTMLInputElement>) => {
-       
         setPostImg(e.target.value);
     };
     const handleChangeText = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -32,7 +31,7 @@ const CreatePost = () => {
     return (
         <section className="container mx-auto">
             <h2 className="text-3xl mb-6 font-bold">Create post</h2>
-            <div className="grid grid-cols-2 gap-28">
+            <div className="grid lg:grid-cols-2 grid-cols-1  lg:gap-28 gap-16">
                 <PostCreateForm
                     showPreviewTags={showPreviewTags}
                     handleChangeTitle={handleChangeTitle}
