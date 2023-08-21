@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const Blog = () => {
     return (
-        <main className="container mx-auto">
+        <main className="container">
             <Title titleText="The Blog" />
             <RecentPosts />
             <AllPosts />

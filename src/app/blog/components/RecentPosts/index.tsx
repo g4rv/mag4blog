@@ -81,9 +81,9 @@ const RecentPosts = () => {
 										<path
 											d="M1 11L11 1M11 1H1M11 1V11"
 											stroke="white"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
+											strokeWidth="2"
+											strokeLinecap="round"
+											strokeLinejoin="round"
 										/>
 									</svg>
 								</Link>
