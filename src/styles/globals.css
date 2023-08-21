@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body:has(.dark) {
+html.dark body {
 	@apply bg-primary text-white;
 }
 
-body:has(.light) {
+html.light body {
 	@apply bg-white text-primary;
 }
 
