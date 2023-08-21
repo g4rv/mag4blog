@@ -6,8 +6,8 @@ const AllPosts = () => {
 	return (
 		<section>
 			<h2 className="mb-8 text-2xl">All blog posts</h2>
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-				<article className="flex flex-col lg:gap-8 gap-5">
+			<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<article className="flex flex-col gap-5 lg:gap-8">
 					<Image
 						src="/images/about.jpg"
 						className="max-h-64  object-cover"
@@ -38,9 +38,9 @@ const AllPosts = () => {
 									<path
 										d="M1 11L11 1M11 1H1M11 1V11"
 										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
 									/>
 								</svg>
 							</Link>
@@ -62,7 +62,7 @@ const AllPosts = () => {
 						</div>
 					</div>
 				</article>
-                <article className="flex flex-col gap-8">
+				<article className="flex flex-col gap-8">
 					<Image
 						src="/images/about.jpg"
 						className="max-h-64  object-cover"
@@ -93,9 +93,9 @@ const AllPosts = () => {
 									<path
 										d="M1 11L11 1M11 1H1M11 1V11"
 										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
 									/>
 								</svg>
 							</Link>
@@ -117,7 +117,7 @@ const AllPosts = () => {
 						</div>
 					</div>
 				</article>
-                <article className="flex flex-col gap-8">
+				<article className="flex flex-col gap-8">
 					<Image
 						src="/images/about.jpg"
 						className="max-h-64  object-cover"
@@ -148,9 +148,9 @@ const AllPosts = () => {
 									<path
 										d="M1 11L11 1M11 1H1M11 1V11"
 										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										stroke-linejoin="round"
+										strokeWidth="2"
+										strokeLinecap="round"
+										strokeLinejoin="round"
 									/>
 								</svg>
 							</Link>
