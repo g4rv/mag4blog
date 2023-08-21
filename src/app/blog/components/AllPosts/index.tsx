@@ -5,7 +5,7 @@ import Link from "next/link";
 const AllPosts = () => {
 	return (
 		<section>
-			<h2 className="mb-8 text-2xl">All blog posts</h2>
+			<h2 className="mb-8 font-medium text-2xl">All blog posts</h2>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 				<article className="flex flex-col lg:gap-8 gap-5">
 					<Image
@@ -22,7 +22,7 @@ const AllPosts = () => {
 						>
 							Sunday , 1 Jan 2023
 						</time>
-						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-white">
+						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-primary dark:hover:border-secondary">
 							<Link
 								className="flex items-start justify-between"
 								href="/blog/1"
@@ -77,7 +77,7 @@ const AllPosts = () => {
 						>
 							Sunday , 1 Jan 2023
 						</time>
-						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-white">
+						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-primary dark:hover:border-secondary">
 							<Link
 								className="flex items-center justify-between "
 								href="/blog/1"
@@ -132,7 +132,7 @@ const AllPosts = () => {
 						>
 							Sunday , 1 Jan 2023
 						</time>
-						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-white">
+						<h2 className="mb-3 w-full border-b border-transparent text-2xl font-semibold transition-colors hover:border-primary dark:hover:border-secondary">
 							<Link
 								className="flex items-center justify-between "
 								href="/blog/1"

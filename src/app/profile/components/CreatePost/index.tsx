@@ -20,7 +20,6 @@ const CreatePost = () => {
         setTitle(e.target.value);
     };
     const handleChangeImg = (e: ChangeEvent<HTMLInputElement>) => {
-       
         setPostImg(e.target.value);
     };
     const handleChangeText = (e: ChangeEvent<HTMLTextAreaElement>) => {

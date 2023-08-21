@@ -45,7 +45,7 @@ const arr = [
 const RecentPosts = () => {
 	return (
 		<section>
-			<h2 className="text-2xl xxs:mb-5 lg:mb-8">Recent blog posts</h2>
+			<h2 className="text-2xl xxs:mb-5 font-medium lg:mb-8">Recent blog posts</h2>
 			<div
 				className={`grid ${firstChildStyles} ${secondChildStyles} ${thirdChildStyles} ${fourthChildStyles} gap-8 lg:grid-cols-2 lg:grid-rows-[repeat(3,200px)]`}
 			>
