@@ -45,12 +45,12 @@ const arr = [
 const RecentPosts = () => {
 	return (
 		<section>
-			<h2 className="text-2xl xxs:mb-5 font-medium lg:mb-8">Recent blog posts</h2>
+			<h2 className="text-2xl 2xs:mb-5 font-medium lg:mb-8">Recent blog posts</h2>
 			<div
 				className={`grid ${firstChildStyles} ${secondChildStyles} ${thirdChildStyles} ${fourthChildStyles} gap-8 lg:grid-cols-2 lg:grid-rows-[repeat(3,200px)]`}
 			>
 				{arr.map((item, index) => (
-					<article key={index} className="flex flex-col xxs:gap-5 lg:gap-8">
+					<article key={index} className="flex flex-col gap-3 2xs:gap-5 lg:gap-8">
 						<Image
 							src={item.imgUrl}
 							className="max-h-64 object-cover"
@@ -88,7 +88,7 @@ const RecentPosts = () => {
 									</svg>
 								</Link>
 							</h2>
-							<p className="lg:mb-6 xxs:mb-3 line-clamp-3 dark:text-secondary">
+							<p className="lg:mb-6 mb-3 line-clamp-3 dark:text-secondary">
 								{item.text}
 							</p>
 							<div className="flex gap-2">

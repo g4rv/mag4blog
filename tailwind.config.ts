@@ -20,7 +20,8 @@ const config: Config = {
 				center: true,
 				padding: "2rem",
 				screens: {
-					xxs: "375px",
+					"3xs": "320px",
+					"2xs": "375px",
 					xs: "480px",
 					sm: "575px",
 					md: "768px",
@@ -30,7 +31,8 @@ const config: Config = {
 				},
 			},
 			screens: {
-				xxs: "375px",
+				"3xs": "320px",
+				"2xs": "375px",
 				xs: "480px",
 				sm: "575px",
 				md: "768px",

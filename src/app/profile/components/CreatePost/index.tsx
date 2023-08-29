@@ -31,7 +31,7 @@ const CreatePost = () => {
     return (
         <section className="container mx-auto">
             <h2 className="text-3xl mb-6 font-bold">Create post</h2>
-            <div className="grid lg:grid-cols-2 grid-cols-1  lg:gap-28 gap-16">
+            <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-28 gap-16">
                 <PostCreateForm
                     showPreviewTags={showPreviewTags}
                     handleChangeTitle={handleChangeTitle}
