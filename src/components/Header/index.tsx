@@ -72,17 +72,17 @@ const Header = () => {
 										alt={session.data.user?.name || ""}
 										width={40}
 										height={40}
-										className="rounded-full"
+										className="rounded-full cursor-pointer"
 										onClick={() =>
 											setShowDropdown((prev) => !prev)
 										}
 									/>
 									{showDropdown ? (
-										<div className="flex flex-col gap-2 absolute top-full bg-primary rounded-lg w-max p-2 left-1/2 -translate-x-1/2">
-											<Link href="/dashboard/profile">
+										<div className="flex flex-col gap-2 absolute top-full mt-3 bg-primary dark:bg-white text-white dark:text-primary rounded-lg w-max p-2 left-1/2 -translate-x-1/2">
+											<Link href="/dashboard/profile" className="hover:underline">
 												Profile
 											</Link>
-											<button onClick={() => signOut()}>
+											<button className="hover:underline" onClick={() => signOut()}>
 												Log out
 											</button>
 										</div>

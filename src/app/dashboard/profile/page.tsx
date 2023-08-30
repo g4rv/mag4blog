@@ -1,6 +1,5 @@
-"use client";
+// "use client";
 import React from "react";
-import Title from "@/ui/Title";
 import Image from "next/image";
 import { Metadata } from "next";
 import { useSession, signOut, signIn } from "next-auth/react";

@@ -46,7 +46,7 @@ const arr = [
 const RecentPosts = () => {
 	return (
 		<section>
-			<h2 className="text-2xl font-medium xxs:mb-5 lg:mb-8">
+			<h2 className="text-2xl font-medium 2xs:mb-5 lg:mb-8">
 				Recent blog posts
 			</h2>
 			<div

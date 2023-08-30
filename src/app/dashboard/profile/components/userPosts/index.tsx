@@ -1,3 +1,4 @@
+
 import Post from "@/components/Post";
 
 const getPosts = async () => {

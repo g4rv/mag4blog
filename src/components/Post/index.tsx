@@ -12,7 +12,7 @@ export type PostProps = {
 
 const Post: FC<PostProps> = ({ imgUrl, title, date, text, tags }) => {
 	return (
-		<article className="flex flex-col xxs:gap-5 lg:gap-8">
+		<article className="gap-3 2xs:gap-5 flex flex-col lg:gap-8">
 			<Image
 				src={imgUrl}
 				className="max-h-64 object-cover"
@@ -47,7 +47,7 @@ const Post: FC<PostProps> = ({ imgUrl, title, date, text, tags }) => {
 						</svg>
 					</Link>
 				</h2>
-				<p className="line-clamp-3 dark:text-secondary xxs:mb-3 lg:mb-6">
+				<p className="mb-2 2xs:mb-3 line-clamp-3 dark:text-secondary lg:mb-6">
 					{text}
 				</p>
 				<div className="flex gap-2">

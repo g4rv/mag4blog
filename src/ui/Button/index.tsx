@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
 		<button
 			type={type}
 			className={twMerge(
-				"min-w-fit rounded-lg dark:bg-white bg-primary p-3  text-center text-sm font-medium text-white dark:text-primary outline-transparent transition-colors hover:bg-slate-300",
+				"min-w-fit rounded-lg bg-primary p-3 text-center text-sm font-medium text-white outline-transparent transition-colors dark:hover:bg-slate-300 dark:bg-white dark:text-primary hover:bg-primary/70",
 				className,
 			)}
 			{...buttonProps}

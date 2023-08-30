@@ -45,10 +45,9 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 				<p className="mb-3 text-lg font-semibold">
 					Title<span>*</span>
 				</p>
-				<label className="w-full" htmlFor="postTitle">
+				<label className="w-full">
 					<input
 						className="input"
-						id="postTitle"
 						name="postTitle"
 						placeholder="Enter post title"
 						maxLength={70}
@@ -67,10 +66,9 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 					Photo<span>*</span>
 				</p>
 				<div className="flex gap-3">
-					<label htmlFor="postImg" className="peer w-full">
+					<label className="peer w-full">
 						<input
 							className="input"
-							id="postImg"
 							name="postImg"
 							placeholder="Paste image url"
 							onChange={props.handleChangeImg}
@@ -87,10 +85,9 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 				<p className="mb-3 text-lg font-semibold">
 					Text<span>*</span>
 				</p>
-				<label className="w-full" htmlFor="postText">
+				<label className="w-full" >
 					<textarea
-						className="input"
-						id="postText"
+						className="input min-h-[200px]"
 						name="postText"
 						placeholder="Enter your text"
 						minLength={10}
@@ -108,7 +105,7 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 					Tags<span>*</span>
 				</p>
 				<div className="">
-					<label className="w-full">
+					<label className="block mb-3">
 						<input
 							className="input"
 							placeholder="Enter your tags"
@@ -116,11 +113,8 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 							onChange={props.handleTagsChange}
 							required
 						/>
-						{/* <p className="mt-1 hidden text-sm font-medium text-pink-600 peer-invalid:block peer-focus:hidden">
-							Provide at least 3 letters
-						</p> */}
 					</label>
-					<Button onClick={props.showPreviewTags}>Add tag</Button>
+					<Button className="min-w-[6.25rem]" onClick={props.showPreviewTags}>Add tag</Button>
 				</div>
 			</div>
 			<Button type="submit">Publish my post</Button>

@@ -1,4 +1,3 @@
-import Title from "@/ui/Title";
 import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
@@ -11,7 +10,9 @@ export const metadata: Metadata = {
 const About = () => {
 	return (
 		<main className="container">
-			<Title titleText="About ASS" />
+			<h1 className="title 2xs:text-[2rem] text-[2.5rem] sm:text-[4rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] 2xl:text-[14rem]">
+				About us
+			</h1>
 			<section>
 				<Image
 					className="mb-8 max-h-[34.75rem] w-full object-cover"
