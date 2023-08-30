@@ -24,7 +24,6 @@ export const POST = async (req: Request) => {
     const newPost = new Post(body)   
     console.log(newPost);
      
-
 	try {
 		await connect();
 
@@ -42,7 +41,6 @@ export const GET = async (req: Request) => {
 	const username = url.searchParams.get('username');
     console.log("username");
     
-
 	try {
 		await connect();
         let query: FilterQuery<Post> = {}

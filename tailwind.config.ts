@@ -2,6 +2,9 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+	future: {
+		hoverOnlyWhenSupported: true,
+	},
 	theme: {
 		extend: {
 			backgroundImage: {
@@ -13,30 +16,30 @@ const config: Config = {
 				primary: "#090d1f",
 				secondary: "#d6dbdc",
 			},
-		},
-		container: {
-			center: true,
-			padding: "2rem",
-			screens: {
-				"3xs": "320px",
-				"2xs": "375px",
-				xs: "480px",
-				sm: "575px",
-				md: "768px",
-				lg: "991px",
-				xl: "1199px",
-				"2xl": "1399px",
+			container: {
+				center: true,
+				padding: "2rem",
+				// screens: {
+				// 	"3xs": "320px",
+				// 	"2xs": "375px",
+				// 	xs: "480px",
+				// 	sm: "575px",
+				// 	md: "768px",
+				// 	lg: "991px",
+				// 	xl: "1199px",
+				// 	"2xl": "1399px",
+				// },
 			},
-		},
-		screens: {
-			"3xs": "320px",
-			"2xs": "375px",
-			xs: "480px",
-			sm: "575px",
-			md: "768px",
-			lg: "991px",
-			xl: "1199px",
-			"2xl": "1399px",
+			// screens: {
+			// 	"3xs": "320px",
+			// 	"2xs": "375px",
+			// 	xs: "480px",
+			// 	sm: "575px",
+			// 	md: "768px",
+			// 	lg: "991px",
+			// 	xl: "1199px",
+			// 	"2xl": "1399px",
+			// },
 		},
 	},
 	plugins: [],

@@ -1,57 +1,98 @@
 "use client";
 import Button from "@/ui/Button";
 import Input from "@/ui/Input";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useSession, signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { NextResponse } from "next/server";
+import { useEffect } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
+
+type FormFileds = z.infer<typeof formSchema>;
+
+const formSchema = z.object({
+	email: z.string().email(),
+	password: z.string().min(6),
+});
 
 const LoginPage = () => {
 	const session = useSession();
+    const route = useRouter()
 
-	const handleSubmit = async (e: any) => {
-		e.preventDefault();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<FormFileds>({
+		resolver: zodResolver(formSchema),
+	});
 
-		const email = e.target[0].value;
-		const password = e.target[1].value;
-
-		signIn("credentials", { email, password });
+	const onSubmit: SubmitHandler<FormFileds> = async (data) => {
+		console.log(data);
+		try {
+			const x = await signIn("credentials", data);
+			console.log(x);
+		} catch (err) {
+			console.log(err);
+			console.log(123);
+		}
 	};
+
+    useEffect(() => {
+        if(session.status === 'authenticated') {
+            route.push('/dashboard/profile')
+        }
+    }, [session, route])
+
 	return (
 		<main className="flex h-full items-center justify-center">
 			{session.status === "authenticated" && session.data.user?.name}
-			<form
+			{/* <form
 				className="flex flex-col items-center gap-4"
-				onSubmit={handleSubmit}
+				onSubmit={handleSubmit(onSubmit)}
 				autoComplete="true"
 			>
-				<label htmlFor="email" className="flex flex-col gap-2">
+				<label className="flex flex-col gap-2">
 					<p>Email</p>
-					<Input
+					<input
+						className="input"
 						type="email"
-						name="email"
-						id="email"
 						placeholder="example@gmail.com"
-						required
+						{...register("email")}
 					/>
+					{errors.email?.message ? (
+						<p className="font-light text-red-300">
+							{errors.email.message}
+						</p>
+					) : null}
 				</label>
-				<label htmlFor="password" className="flex flex-col gap-2">
+				<label className="flex flex-col gap-2">
 					<p>Password</p>
-					<Input
+					<input
+						className="input"
 						type="password"
-						name="passowrd"
-						id="password"
 						placeholder="Enter password"
-						required
+						{...register("password")}
 					/>
+					{errors.password?.message ? (
+						<p className="font-light text-red-300">
+							{errors.password.message}
+						</p>
+					) : null}
 				</label>
+				{session.status}
+				{JSON.stringify(session.data)}
 				<p>
-					Dont have a profile yet?{' '}
+					Dont have a profile yet?{" "}
 					<Link className="underline" href="/dashboard/register">
 						Register
 					</Link>
 				</p>
 				<Button type="submit">Log in</Button>
-				<Button onClick={() => signIn("google")}>Google</Button>
-			</form>
+			</form> */}
+			<Button onClick={() => signIn("google")}>Google</Button>
 		</main>
 	);
 };

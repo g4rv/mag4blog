@@ -20,18 +20,20 @@ const handler = NextAuth({
                 try {
                     const user = await User.findOne({ email: credentials.email });
 
-                    if (!user) throw new Error('No such user found!');
+                    if (!user) throw new NextResponse('No such user found!');
 
                     const isPasswordCorrect = await bcrypt.compare(
                         credentials.password,
                         user.password
                     );
 
-                    if (!isPasswordCorrect)
+                    if (!isPasswordCorrect){
                         throw new Error('Wrong credentials');
+                    }
 
                     return user;
                 } catch (err) {
+                    console.log(err);
                     throw new Error(err);
                 }
             },
