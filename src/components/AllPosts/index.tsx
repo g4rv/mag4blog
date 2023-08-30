@@ -3,15 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Post from "@/components/Post";
 
-const firstChildStyles =
-	"lg:[&>*:nth-child(1)]:row-start-1 lg:[&>*:nth-child(1)]:justify-between lg:[&>*:nth-child(1)]:row-end-3 lg:[&>*:nth-child(1)_img]:max-h-[200px]";
-const secondChildStyles =
-	"md:[&>*:nth-child(2)]:flex-row md:[&>*:nth-child(2)_img]:flex-1 md:[&>*:nth-child(2)>div]:flex-[1.5]";
-const thirdChildStyles =
-	"md:[&>*:nth-child(3)]:flex-row md:[&>*:nth-child(3)_img]:flex-1 md:[&>*:nth-child(3)>div]:flex-[1.5]";
-const fourthChildStyles =
-	"lg:[&>*:nth-child(4)]:col-span-full lg:[&>*:nth-child(4)]:flex-row lg:[&>*:nth-child(4)_img]:flex-1 lg:[&>*:nth-child(4)>div]:flex-1";
-
 const arr = [
 	{
 		imgUrl: "/images/about.jpg",
@@ -43,15 +34,11 @@ const arr = [
 	},
 ];
 
-const RecentPosts = () => {
+const AllPosts = () => {
 	return (
 		<section>
-			<h2 className="text-2xl font-medium 2xs:mb-5 lg:mb-8">
-				Recent blog posts
-			</h2>
-			<div
-				className={`grid ${firstChildStyles} ${secondChildStyles} ${thirdChildStyles} ${fourthChildStyles} gap-8 lg:grid-cols-2 lg:grid-rows-[repeat(3,200px)]`}
-			>
+			<h2 className="mb-8 text-2xl font-medium">All blog posts</h2>
+			<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 				{arr.map((item, index) => (
 					<Post
 						key={index}
@@ -67,4 +54,4 @@ const RecentPosts = () => {
 	);
 };
 
-export default RecentPosts;
+export default AllPosts;

@@ -17,7 +17,15 @@ main > section {
 @layer base {
 	html,
 	body {
-		height: 100%;
 		min-height: 100vh;
+	}
+}
+
+@layer utilities {
+	.input {
+		@apply w-full rounded-lg border border-primary bg-white px-4 py-2 text-base text-primary outline-none duration-200 focus:bg-primary focus:text-white dark:border-white dark:bg-primary dark:text-white dark:focus:bg-white dark:focus:text-primary;
+	}
+	.title {
+		@apply border-y-2 border-primary text-center font-bold uppercase leading-tight dark:border-secondary;
 	}
 }

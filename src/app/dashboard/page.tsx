@@ -5,7 +5,7 @@ const Dashboard = () => {
         <main className="h-full">
             <Link href='/dashboard/login'>log</Link>
             <br />
-            <Link href='/dashboard/register'>reg</Link>
+            {/* <Link href='/dashboard/register'>reg</Link> */}
         </main>
     );
 };
