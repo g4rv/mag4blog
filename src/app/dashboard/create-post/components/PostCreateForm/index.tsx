@@ -1,6 +1,9 @@
 import Button from "@/ui/Button";
-import Input from "@/ui/Input";
+import Textarea from "@/ui/TextArea";
+import { zodResolver } from "@hookform/resolvers/zod";
 import React, { ChangeEvent, FC } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { z } from "zod";
 
 type PostCreateFormProps = {
 	handleChangeTitle: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -13,23 +16,38 @@ type PostCreateFormProps = {
 	postText: string;
 	inputTag: string;
 };
+type PostSchema = z.infer<typeof postSchema>;
+
+const postSchema = z.object({
+	title: z.string().min(2),
+	imgUrl: z.string(),
+    text: z.string().min(10),
+    tags: z.string().array()
+});
 
 const PostCreateForm: FC<PostCreateFormProps> = (props) => {
-	const validateImageUrl = () => {
-		return (
-			!props.postImg.startsWith("https://") ||
-			!props.postImg.startsWith("http://")
-		);
+
+    const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<PostSchema>({
+		resolver: zodResolver(postSchema),
+	});
+
+	const onSubmit: SubmitHandler<PostSchema> = async (data) => {
+		console.log(data);
 	};
+
 	return (
-		<form className="flex w-full max-w-lg flex-col gap-3">
+		<form className="flex w-full max-w-lg flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
 			<div className="relative">
 				<p className="mb-3 text-lg font-semibold">
 					Title<span>*</span>
 				</p>
 				<label className="w-full" htmlFor="postTitle">
-					<Input
-						className="peer"
+					<input
+						className="input"
 						id="postTitle"
 						name="postTitle"
 						placeholder="Enter post title"
@@ -50,13 +68,13 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 				</p>
 				<div className="flex gap-3">
 					<label htmlFor="postImg" className="peer w-full">
-						<Input
-							className="peer"
+						<input
+							className="input"
 							id="postImg"
 							name="postImg"
 							placeholder="Paste image url"
 							onChange={props.handleChangeImg}
-							value={validateImageUrl() ? props.postImg : ""}
+							value={props.postImg}
 							required
 						/>
 						<p className="mt-1 hidden text-sm font-medium text-pink-600 peer-invalid:block peer-focus:hidden">
@@ -71,7 +89,7 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 				</p>
 				<label className="w-full" htmlFor="postText">
 					<textarea
-						className="peer min-h-[12.5rem] w-full rounded-lg border border-primary bg-white px-4 py-2 text-base text-primary outline-none outline-transparent  duration-200 focus:bg-primary focus:text-white dark:border-white dark:bg-primary dark:text-white dark:focus:bg-white dark:focus:text-primary"
+						className="input"
 						id="postText"
 						name="postText"
 						placeholder="Enter your text"
@@ -90,14 +108,10 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 					Tags<span>*</span>
 				</p>
 				<div className="">
-					<label className="w-full" htmlFor="postTag">
-						<Input
-							className="mb-4 peer"
-							id="postTag"
-							name="postTag"
+					<label className="w-full">
+						<input
+							className="input"
 							placeholder="Enter your tags"
-							maxLength={45}
-							minLength={3}
 							value={props.inputTag}
 							onChange={props.handleTagsChange}
 							required

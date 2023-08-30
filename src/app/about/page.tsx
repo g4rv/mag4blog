@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const About = () => {
 	return (
-		<main className="container mx-auto">
+		<main className="container">
 			<Title titleText="About ASS" />
 			<section>
 				<Image
