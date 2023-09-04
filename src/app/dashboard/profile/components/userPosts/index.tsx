@@ -32,7 +32,7 @@ const UserPosts = async () => {
 					<Post
 						title={post.title}
 						date="123"
-						imgUrl=""
+						imgUrl={post.imgUrl}
 						tags={post.tags}
 						text={post.text}
 					/>

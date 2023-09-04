@@ -2,7 +2,7 @@
 
 import PreviewPost from "./components/PreviewPost";
 import PostCreateForm from "./components/PostCreateForm";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -16,7 +16,7 @@ const CreatePost = () => {
 	const [inputTag, setInputTag] = useState<string>("");
 	const [postTag, setPostTag] = useState<string[]>([]);
 
-    if (session.status === "unauthenticated") {
+	if (session.status === "unauthenticated") {
 		route.push("/dashboard/login");
 	}
 
@@ -25,7 +25,7 @@ const CreatePost = () => {
 	}
 
 	const showPreviewTags = () => {
-		if (inputTag.length === 0) return;
+		if (inputTag.length === 0 || postTag.indexOf(inputTag) >= 0) return;
 		setPostTag((prev) => [...prev, inputTag]);
 		setInputTag("");
 	};
@@ -41,8 +41,27 @@ const CreatePost = () => {
 	const handleTagsChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setInputTag(e.target.value);
 	};
-    const deleteTag = (tag: string) => {
-        setPostTag(prevTags => prevTags.filter(item => item !== tag))
+	const deleteTag = (tag: string) => {
+		setPostTag((prevTags) => prevTags.filter((item) => item !== tag));
+	};
+    const onSubmit = async () => {
+        try {
+            await fetch('/api/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    title: title,
+                    text: postText,
+                    imgUrl: postImg,
+                    tags: postTag,
+                    author: {
+                        name: session.data?.user?.name,
+                        username: session.data?.user?.name
+                    }
+                })
+            })
+        } catch(err) {
+            throw new Error(`${err}`)
+        }
     }
 	return (
 		<section className="container">
@@ -58,15 +77,15 @@ const CreatePost = () => {
 					title={title}
 					postText={postText}
 					postImg={postImg}
+                    onSubmit={onSubmit}
 				/>
 				<PreviewPost
 					postTitle={title}
 					postImg={postImg}
 					postText={postText}
 					postTag={postTag}
-                    deleteTag={deleteTag}
+					deleteTag={deleteTag}
 				/>
-                
 			</div>
 		</section>
 	);
