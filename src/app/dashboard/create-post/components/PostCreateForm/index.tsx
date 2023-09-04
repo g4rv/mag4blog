@@ -1,9 +1,6 @@
 import Button from "@/ui/Button";
-import Textarea from "@/ui/TextArea";
-import { zodResolver } from "@hookform/resolvers/zod";
-import React, { ChangeEvent, FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { z } from "zod";
+import { useRouter } from "next/navigation";
+import React, { ChangeEvent, FC, FormEvent } from "react";
 
 type PostCreateFormProps = {
 	handleChangeTitle: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -11,43 +8,36 @@ type PostCreateFormProps = {
 	handleChangeText: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 	handleTagsChange: (e: ChangeEvent<HTMLInputElement>) => void;
 	showPreviewTags: () => void;
+    onSubmit: () => void;
 	title: string;
 	postImg: string;
 	postText: string;
 	inputTag: string;
 };
-type PostSchema = z.infer<typeof postSchema>;
-
-const postSchema = z.object({
-	title: z.string().min(2),
-	imgUrl: z.string(),
-    text: z.string().min(10),
-    tags: z.string().array()
-});
 
 const PostCreateForm: FC<PostCreateFormProps> = (props) => {
-
-    const {
-		register,
-		handleSubmit,
-		formState: { errors },
-	} = useForm<PostSchema>({
-		resolver: zodResolver(postSchema),
-	});
-
-	const onSubmit: SubmitHandler<PostSchema> = async (data) => {
-		console.log(data);
-	};
+    const router = useRouter()
+    
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault()
+        try {
+            props.onSubmit()
+        } catch(err) {
+            throw new Error(`${err}`)
+        }
+        router.push('/dashboard/profile')
+    }
 
 	return (
-		<form className="flex w-full max-w-lg flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
+		<form className="flex w-full max-w-lg flex-col gap-3" onSubmit={handleSubmit}>
 			<div className="relative">
 				<p className="mb-3 text-lg font-semibold">
 					Title<span>*</span>
 				</p>
-				<label className="w-full">
+				<label className="w-full" htmlFor="postTitle">
 					<input
 						className="input"
+						id="postTitle"
 						name="postTitle"
 						placeholder="Enter post title"
 						maxLength={70}
@@ -66,9 +56,10 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 					Photo<span>*</span>
 				</p>
 				<div className="flex gap-3">
-					<label className="peer w-full">
+					<label htmlFor="postImg" className="peer w-full">
 						<input
 							className="input"
+							id="postImg"
 							name="postImg"
 							placeholder="Paste image url"
 							onChange={props.handleChangeImg}
@@ -85,9 +76,10 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 				<p className="mb-3 text-lg font-semibold">
 					Text<span>*</span>
 				</p>
-				<label className="w-full" >
+				<label className="w-full" htmlFor="postText">
 					<textarea
-						className="input min-h-[200px]"
+						className="input"
+						id="postText"
 						name="postText"
 						placeholder="Enter your text"
 						minLength={10}
@@ -105,16 +97,18 @@ const PostCreateForm: FC<PostCreateFormProps> = (props) => {
 					Tags<span>*</span>
 				</p>
 				<div className="">
-					<label className="block mb-3">
+					<label className="w-full">
 						<input
 							className="input"
 							placeholder="Enter your tags"
 							value={props.inputTag}
 							onChange={props.handleTagsChange}
-							required
 						/>
+						{/* <p className="mt-1 hidden text-sm font-medium text-pink-600 peer-invalid:block peer-focus:hidden">
+							Provide at least 3 letters
+						</p> */}
 					</label>
-					<Button className="min-w-[6.25rem]" onClick={props.showPreviewTags}>Add tag</Button>
+					<Button onClick={props.showPreviewTags}>Add tag</Button>
 				</div>
 			</div>
 			<Button type="submit">Publish my post</Button>
